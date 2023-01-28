@@ -1,23 +1,36 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Django Girls blog</title>
-    </head>
-    <body>
-        <header>
-            <h1><a href="/">Django Girls Blog</a></h1>
-        </header>
+{% extends 'blog/base.html' %}
 
-        <article>
-            <time>published: 14.06.2014, 12:14</time>
-            <h2><a href="">My first post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-        </article>
+{% block style %}
+<style>
+    footer{
+        position: absolute;
+    }
+    .post-list{
+        background-color: white;
+        border: 3px solid black;
+    }
+    article{
+        margin: 10px;
+    }
+</style>
+{% endblock %}
 
-        <article>
-            <time>published: 14.06.2014, 12:14</time>
-            <h2><a href="">My second post</a></h2>
-            <p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut f.</p>
-        </article>
-    </body>
-</html>
+{% block content %}
+<style>
+    .container{
+        margin-top: 20px;
+    }
+
+
+</style>
+{% for post in posts %}
+<div class="container px-4 px-lg-5 post-list">
+    <article>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+        <time>published: {{ post.published_date }}</time>
+    </article>
+</div>
+
+{% endfor %}
+{% endblock %}

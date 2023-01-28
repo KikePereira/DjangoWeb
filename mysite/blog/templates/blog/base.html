@@ -1,0 +1,95 @@
+{% load static %}
+
+<!DOCTYPE html>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BLOG</title>
+</head>
+<style>
+    body{
+        background-image: url(https://img.freepik.com/vector-gratis/patron-costuras_1159-5086.jpg?w=1380&t=st=1671044409~exp=1671045009~hmac=7a0fd5d354507539a1471c5924a5292301bd38786fc0a3e3884c4f5d7e5419b0);
+    }
+    header{
+        background-image: url(https://img.freepik.com/vector-gratis/fondo-galaxia-degradado_23-2148971479.jpg?w=1800&t=st=1671044725~exp=1671045325~hmac=15f26d993be83ffbf82e5bd612073f36d9ef069d697ae93e9a32940c19a123ef);
+        background-size: cover;
+        color: white;
+        border-bottom: 2px solid black;
+    }
+    footer{
+        background-color: white;
+        position: relative;
+        bottom: 0;
+        width: 100%;
+    }
+
+    
+</style>
+
+{% block style %}
+{% endblock %}
+<body>
+
+    <head>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="/">BLOG</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="/post">POSTS</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/about">ABOUT</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/contact">CONTACT</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </head>
+
+    <main>
+    {% block content %}
+    {% endblock %}
+    </main>
+    <!-- Footer-->
+    <footer class="border-top">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="#!">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-twitter fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#!">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-facebook-f fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#!">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fas fa-circle fa-stack-2x"></i>
+                                    <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="small text-center text-muted fst-italic">Copyright &copy; Your Website 2022</div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
+                
